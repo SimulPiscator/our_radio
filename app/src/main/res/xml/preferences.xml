@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/prefcat_server_connection_title">
+        <EditTextPreference
+            android:defaultValue="10.0.1.2"
+            android:inputType="phone"
+            android:key="pref_mpd_server_ip"
+            android:title="@string/pref_mpd_server_ip_title" />
+        <EditTextPreference
+            android:defaultValue="6600"
+            android:inputType="number"
+            android:key="pref_mpd_server_port"
+            android:title="@string/pref_mpd_server_port_title" />
+        <EditTextPreference
+            android:defaultValue="3688"
+            android:inputType="number"
+            android:key="pref_ws_push_port"
+            android:title="@string/pref_ws_push_port_title" />
+        <ListPreference
+            android:key="pref_enable_wifi"
+            android:title="@string/pref_wifi_title"
+            android:entries="@array/pref_wifi_entries"
+            android:entryValues="@array/pref_wifi_entry_values"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/prefcat_playlists_title">
+        <EditTextPreference
+            android:defaultValue=".*"
+            android:inputType="textNoSuggestions"
+            android:key="pref_playlist_pattern"
+            android:title="@string/pref_playlist_pattern_title" />
+        <CheckBoxPreference
+            android:key="pref_playlist_shuffle"
+            android:title="@string/pref_playlist_shuffle_title"
+            android:defaultValue="false"
+            />
+        <CheckBoxPreference
+            android:key="pref_playlist_repeat"
+            android:title="@string/pref_playlist_repeat_title"
+            android:defaultValue="false"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/prefcat_audio_title">
+        <org.simulpiscator.our_radio.DynamicMultiselectPreference
+            android:key="pref_outputs"
+            android:summary="@string/pref_outputs_summary"
+            android:title="@string/pref_outputs_title" />
+        <EditTextPreference
+            android:defaultValue="0"
+            android:title="@string/pref_cross_fade_duration_title"
+            android:key="pref_cross_fade_duration"/>
+        <EditTextPreference
+            android:defaultValue="10"
+            android:inputType="number"
+            android:key="pref_sleep_fade_duration"
+            android:title="@string/pref_sleep_fade_duration_title" />
+    </PreferenceCategory>
+    <Preference
+        android:key="pref_sleep_time" />
+    <Preference
+        android:key="pref_init_required"
+        android:defaultValue="true" />
+</PreferenceScreen>

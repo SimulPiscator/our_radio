@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:id="@+id/sleep_shortcuts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10sp">
+
+        <TableRow android:padding="10sp">
+
+            <Button
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/sleep_duration_1" />
+
+            <Button
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/sleep_duration_2" />
+
+            <Button
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/sleep_duration_3" />
+        </TableRow>
+
+        <TableRow android:padding="10sp">
+
+            <Button
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/sleep_duration_4" />
+
+            <Button
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/sleep_duration_5" />
+
+            <Button
+                android:layout_weight="1"
+                android:gravity="center"
+                android:tag="clear"
+                android:text="@string/sleep_duration_none" />
+        </TableRow>
+    </TableLayout>
+
+    <EditText
+        android:id="@+id/edit_sleep_duration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="time" />
+
+</LinearLayout>

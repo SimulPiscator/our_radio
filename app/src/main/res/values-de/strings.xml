@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Unser Radio</string>
+    <string name="not_playing">\u2014 kein Programm ausgewählt \u2014</string>
+    <string name="play_button_text">Programm…</string>
+    <string name="stop_button_text">Stop</string>
+    <string name="pick_sleep_title">Stunden:Minuten bis zum Ausschalten:</string>
+    <string name="message_remaining_sleep">noch %1$s</string>
+    <string name="menu_quit">Beenden</string>
+    <string name="menu_sleep_timer">Ausschaltzeit</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="sleep_duration_none">keine</string>
+    <string name="message_mpd_fail">keine Verbindung zum MPD-Server %1$s:%2$d</string>
+    <string name="pref_mpd_server_ip_title">OwnTone-Server</string>
+    <string name="pref_mpd_server_port_title">MPD-Port des OwnTone-Servers</string>
+    <string name="pref_ws_push_port_title">Websocket-Port des OwnTone-Servers</string>
+    <string name="pref_wifi_title">WLAN deaktiviert?</string>
+    <string-array name="pref_wifi_entries">
+        <item>nachfragen</item>
+        <item>deaktiviert lassen</item>
+        <item>aktivieren</item>
+    </string-array>
+    <string name="pref_playlist_pattern_title">Playlistauswahl (regex)</string>
+    <string name="pref_outputs_title">Audioausgabegeräte</string>
+    <string name="pref_outputs_summary">Geräte anzeigen oder ausblenden</string>
+    <string name="pref_sleep_fade_duration_title">Ausblendedauer</string>
+    <string name="message_mpd_connected">verbunden mit %1$s:%2$d</string>
+    <string name="message_playlist_no_match">keine Playlist passt auf \"%1$s\"</string>
+    <string name="pref_cross_fade_duration_title">Überblendedauer</string>
+    <string name="pref_playlist_repeat_title">Wiederholen</string>
+    <string name="pref_playlist_shuffle_title">Zufallsreihenfolge</string>
+    <string name="prefcat_server_connection_title">Serververbindung</string>
+    <string name="prefcat_playlists_title">Playlisten</string>
+    <string name="prefcat_audio_title">Tonausgabe</string>
+    <string name="msg_enabling_wifi">WLAN aktivieren…</string>
+    <string name="dialog_wifi_title">WLAN ist deaktiviert</string>
+    <string name="dialog_wifi_message">Was möchten Sie tun?</string>
+    <string name="dialog_wifi_button_autoenable">immer aktivieren</string>
+    <string name="dialog_wifi_button_opensettings">jetzt aktivieren</string>
+    <string name="dialog_wifi_button_cancel">nicht mehr fragen</string>
+    <string name="msg_connecting">mit %1$s:%2$d verbinden…</string>
+    <string name="msg_unexpected_server_response">unerwartete Serverantwort</string>
+    <string name="msg_loading_playlist">Playlist wird geladen …</string>
+</resources>

@@ -1,0 +1,53 @@
+<resources>—
+    <string name="app_name">Our Radio</string>
+    <string name="not_playing">\u2014 not playing \u2014</string>
+    <string name="play_button_text">Play…</string>
+    <string name="stop_button_text">Stop</string>
+    <string name="pick_sleep_title">Sleep in hours:minutes:</string>
+    <string name="message_remaining_sleep">%1$s left</string>
+    <string name="menu_quit">Quit</string>
+    <string name="menu_sleep_timer">Sleep timer</string>
+    <string name="menu_settings">Settings</string>
+    <string name="sleep_duration_none">none</string>
+    <string name="message_mpd_connected">connected to %1$s:%2$d</string>
+    <string name="message_mpd_fail">could not establish MPD connection to %1$s:%2$d</string>
+    <string name="message_playlist_no_match">no playlist matches pattern \"%1$s\"</string>
+    <string name="sleep_duration_1" translatable="false">0:10</string>
+    <string name="sleep_duration_2" translatable="false">0:20</string>
+    <string name="sleep_duration_3" translatable="false">0:30</string>
+    <string name="sleep_duration_4" translatable="false">1:00</string>
+    <string name="sleep_duration_5" translatable="false">1:30</string>
+    <string name="pref_mpd_server_ip_title">OwnTone server</string>
+    <string name="pref_mpd_server_port_title">Server MPD port</string>
+    <string name="pref_ws_push_port_title">Server websocket port</string>
+    <string name="pref_wifi_title">Wifi disabled?</string>
+    <string-array name="pref_wifi_entries">
+        <item>ask what to do</item>
+        <item>leave wifi alone</item>
+        <item>enable wifi on startup</item>
+    </string-array>
+    <string-array name="pref_wifi_entry_values" translatable="false">
+        <item>ask</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string name="pref_playlist_pattern_title">Playlist selection (regex)</string>
+    <string name="pref_outputs_title">Audio devices</string>
+    <string name="pref_outputs_summary">hide/show audio devices</string>
+    <string name="pref_sleep_fade_duration_title">Sleep fade duration</string>
+    <string name="pref_cross_fade_duration_title">Cross fade duration</string>
+    <string name="pref_playlist_repeat_title">Repeat</string>
+    <string name="pref_playlist_shuffle_title">Shuffle</string>
+    <string name="prefcat_server_connection_title">Server Connection</string>
+    <string name="prefcat_playlists_title">Playlists</string>
+    <string name="prefcat_audio_title">Audio</string>
+    <string name="msg_enabling_wifi">enabling wifi…</string>
+    <string name="dialog_wifi_title">Wifi is disabled</string>
+    <string name="dialog_wifi_message">What would you like to do?</string>
+    <string name="dialog_wifi_button_autoenable">always enable wifi</string>
+    <string name="dialog_wifi_button_opensettings">open wifi settings</string>
+    <string name="dialog_wifi_button_cancel">don\'t ask again</string>
+    <string name="msg_connecting">connecting to %1$s:%2$d…</string>
+    <string name="msg_unexpected_server_response">unexpected server response</string>
+    <string name="msg_loading_playlist">loading playlist …</string>
+</resources>

@@ -6,8 +6,8 @@ An OwnTone remote for Android, optimized for web radio purposes.
 <img src="https://github.com/SimulPiscator/our_radio/assets/28909687/6f63ca9f-a4b8-4c10-a7ad-9ffe4bdca250" width="320">
 
 ## Playlist selection ...
-... is done in a hierarchical fashion, depending on directory hierarchies on disk.</br>
-On each level of the hieararchy, only entries with a leading pair of digits, followed with an underscore, will be considered.</br>
+... is done in a hierarchical fashion, depending on directory hierarchy on disk as seen by the OwnTone server.</br>
+On each level of the hierararchy, only entries with a leading pair of digits, followed with an underscore, will be considered.</br>
 The leading pair of digits is used for sorting purposes, and removed for display.</br>
 <img src="https://github.com/SimulPiscator/our_radio/assets/28909687/17c3e0b2-f584-4623-88bf-97185fdd9009" width="320">
 <img src="https://github.com/SimulPiscator/our_radio/assets/28909687/2a820dcc-96d1-4109-a103-4c1a775e4334" width="320">

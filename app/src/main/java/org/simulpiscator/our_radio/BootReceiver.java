@@ -9,6 +9,7 @@ public class BootReceiver extends BroadcastReceiver {
     private static final long ONE_MINUTE = 1000*60;
     @Override
     public void onReceive(Context context, Intent intent) {
+        Alarm alarm = new Alarm(context);
         if(Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             Preferences prefs = Preferences.getInstance(context);
             long sleepTimeMs = prefs.getSleepTimeMs();
@@ -17,7 +18,7 @@ public class BootReceiver extends BroadcastReceiver {
                 if(timeToAlarm < -ONE_MINUTE*3) // schedule alarm if it happened during reboot
                     prefs.setSleepTimeMs(-1);
                 else
-                    Alarm.schedule(context, sleepTimeMs);
+                    alarm.schedule(sleepTimeMs);
             }
         }
     }

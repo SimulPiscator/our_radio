@@ -8,20 +8,26 @@ import android.content.Intent;
 import static android.content.Context.ALARM_SERVICE;
 
 class Alarm {
-    private static PendingIntent sInstance = null;
-    private static PendingIntent getIntent(Context context) {
-        if (sInstance == null) {
-            Intent intent = new Intent(context, AlarmReceiver.class);
-            sInstance = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+    private PendingIntent mInstance = null;
+    private final AlarmManager mAlarmManager;
+    private final Context mContext;
+
+    public Alarm(Context context) {
+        mContext = context;
+        mAlarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
+    }
+    private PendingIntent getIntent() {
+        if (mInstance == null) {
+            Intent intent = new Intent(mContext, AlarmReceiver.class);
+            mInstance = PendingIntent.getBroadcast(mContext, 0, intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
         }
-        return sInstance;
+        return mInstance;
     }
-    static void schedule(Context context, long alarmTimeMs) {
-        AlarmManager am = (AlarmManager) context.getSystemService(ALARM_SERVICE);
-        am.set(AlarmManager.RTC_WAKEUP, alarmTimeMs, getIntent(context));
+    void schedule(long alarmTimeMs) {
+        mAlarmManager.set(AlarmManager.RTC_WAKEUP, alarmTimeMs, getIntent());
     }
-    static void cancel(Context context) {
-        AlarmManager am = (AlarmManager) context.getSystemService(ALARM_SERVICE);
-        am.cancel(getIntent(context));
+    void cancel() {
+        mAlarmManager.cancel(getIntent());
     }
 }

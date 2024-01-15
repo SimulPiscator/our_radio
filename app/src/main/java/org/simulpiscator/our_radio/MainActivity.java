@@ -58,6 +58,8 @@ public class MainActivity extends Activity implements MpdThread.Listener, WsThre
     private static final int LENGTH_PERSISTENT = -1;
     private static final int mUIUpdateDelayMs = 1000;
 
+    private Alarm mAlarm;
+
     enum State {idle, playingInitiated, playing, stopInitiated, error}
 
     static private class PlayerState {
@@ -423,10 +425,10 @@ public class MainActivity extends Activity implements MpdThread.Listener, WsThre
         long sleepTimeMs = -1L;
         if (ms > 0) {
             sleepTimeMs = System.currentTimeMillis() + ms;
-            Alarm.schedule(this, sleepTimeMs);
+            mAlarm.schedule(sleepTimeMs);
         } else {
             sleepTimeMs = -1L;
-            Alarm.cancel(this);
+            mAlarm.cancel();
         }
         mPreferences.setSleepTimeMs(sleepTimeMs);
     }
@@ -535,6 +537,8 @@ public class MainActivity extends Activity implements MpdThread.Listener, WsThre
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        mAlarm = new Alarm(this);
 
         mPreferences = Preferences.getInstance(this);
 

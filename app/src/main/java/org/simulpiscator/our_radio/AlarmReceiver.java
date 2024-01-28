@@ -18,8 +18,9 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent intent) {
         PowerManager pm = (PowerManager)context.getSystemService(POWER_SERVICE);
         final PowerManager.WakeLock wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
-        wakeLock.acquire();
-        new Thread() {
+        int duration = Preferences.getInstance(context).getSleepFadeDurationMs();
+        wakeLock.acquire(2 * duration);
+        new Thread() { // will be killed after 10s
             public void run() {
                 onReceiveAsync(context, wakeLock);
             }
@@ -29,7 +30,6 @@ public class AlarmReceiver extends BroadcastReceiver {
     private void onReceiveAsync(Context context, PowerManager.WakeLock wakeLock) {
         try {
             Log.d(TAG, "received sleep alarm, going to send stop request");
-
             Preferences prefs = Preferences.getInstance(context);
             prefs.setSleepTimeMs(-1);
             int timeout = prefs.getServerTimeoutMs();
@@ -49,7 +49,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 int duration = prefs.getSleepFadeDurationMs();
                 if(duration > 0) {
                     int steps = prefs.getSleepFadeSteps();
-                    for (int i = 0; i < steps; ++i) {
+                    for (int i = 1; i <= steps; ++i) {
                         int volume = initialVolume - (initialVolume * i) / steps;
                         new MpdRequest("setvol " + Integer.toString(volume)).process(connection, timeout);
                         SystemClock.sleep(duration / steps);
@@ -63,8 +63,6 @@ public class AlarmReceiver extends BroadcastReceiver {
             connection.close();
         } catch (Exception e) {
             Log.e(TAG, e.getClass() + ": " + e.getMessage());
-        } finally {
-            wakeLock.release();
         }
     }
 }

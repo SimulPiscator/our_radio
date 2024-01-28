@@ -208,11 +208,14 @@ class Preferences {
     }
 
     int getSleepFadeDurationMs() {
-        String duration = mPreferences.getString(KEY_SLEEP_FADE_DURATION, "10");
+        String duration = mPreferences.getString(KEY_SLEEP_FADE_DURATION, "6");
         try {
-            return Integer.decode(duration) * 1000;
+            int ms = Integer.decode(duration) * 1000;
+            if (ms >= 10*1000)
+                ms = 9*1000;
+            return ms;
         } catch (Exception e) {
-            return 10*1000;
+            return 6*1000;
         }
     }
 

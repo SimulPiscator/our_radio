@@ -25,7 +25,11 @@ class Alarm {
         return mInstance;
     }
     void schedule(long alarmTimeMs) {
-        mAlarmManager.set(AlarmManager.RTC_WAKEUP, alarmTimeMs, getIntent());
+        try {
+            mAlarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, alarmTimeMs, getIntent());
+        } catch(SecurityException e) {
+            mAlarmManager.setExact(AlarmManager.RTC_WAKEUP, alarmTimeMs, getIntent());
+        }
     }
     void cancel() {
         mAlarmManager.cancel(getIntent());

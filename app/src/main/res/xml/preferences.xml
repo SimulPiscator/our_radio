@@ -52,7 +52,7 @@
             android:title="@string/pref_cross_fade_duration_title"
             android:key="pref_cross_fade_duration"/>
         <EditTextPreference
-            android:defaultValue="10"
+            android:defaultValue="6"
             android:inputType="number"
             android:key="pref_sleep_fade_duration"
             android:title="@string/pref_sleep_fade_duration_title" />

@@ -15,7 +15,7 @@ The leading pair of digits is used for sorting purposes, and removed for display
 ## Sleep timer ...
 ... functionality will fade out playback after a selectable amount of time.</br>
 NOTE: For the sleep timer to work, it is necessary to go to the app's "App Info" dialog in preferences, and allow 
-"Alarms & reminders" for the app. Otherwise, sleep timers will fail to register with the Android system.
+"Alarms & reminders" for the app. Otherwise, sleep timers will fail to register with the Android system.</br>
 <img src="https://github.com/SimulPiscator/our_radio/assets/28909687/c5a2d013-00dc-489c-81d4-02e5929cfdc8" width="320">
 
 ## Preferences ...
